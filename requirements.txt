@@ -1,0 +1,11 @@
+# City Walkability project — pipeline dependencies
+# Tested against the versions below (pinned as floors, not exact pins,
+# since OSMnx/GeoPandas move fast and we haven't hit any breaking changes).
+
+osmnx>=2.0
+networkx>=3.0
+numpy>=2.0
+pandas>=2.0
+geopandas>=1.0
+matplotlib>=3.8
+requests>=2.30

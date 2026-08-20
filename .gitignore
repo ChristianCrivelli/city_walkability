@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local secrets (e.g. GOOGLE_ELEVATION_API_KEY)
+.env
+
+# NOTE: locations/ and figures/ are intentionally NOT ignored — they're
+# already tracked in git history. See docs/issues/008-repo-hygiene.md for
+# the open discussion about whether generated data belongs in git at all
+# (Git LFS vs. regenerate-on-demand) before changing that.
+#
+# New generated outputs (friction_weighting.py and beyond), by contrast,
+# start out ignored by default rather than repeating the same "large
+# regenerable binary committed to git" pattern before that discussion is
+# resolved. Regenerate locally with `python friction_weighting.py`.
+locations/*/*_friction.graphml
