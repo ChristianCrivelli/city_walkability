@@ -27,8 +27,8 @@ depends on the graph the previous step produced:
    (slope penalty + infrastructure penalty combined into `friction_weight`)
 2. ✅ [**002 — Planned vs. Actual comparison**](docs/issues/002-planned-vs-actual-baseline-and-comparison.md) (GitHub #2)
    (`planned_vs_actual.py` — random O-D sampling + per-pair comparison, run against all 5 cities; POI-based sampling deferred to #005)
-3. 🔲 [**003 — Connectivity metrics**](docs/issues/003-connectivity-metrics.md) (GitHub #3)
-   (circuity, betweenness centrality / choke points)
+3. ✅ [**003 — Connectivity metrics**](docs/issues/003-connectivity-metrics.md) (GitHub #3)
+   (`connectivity_metrics.py` — circuity reusing #002's O-D sample, betweenness centrality with exact/k-sample split by graph size, top-10 choke points per city)
 4. 🔲 [**004 — Composite True Walkability Index**](docs/issues/004-true-walkability-index.md) (GitHub #4)
 
 Running alongside Phase 2, not blocking it:
