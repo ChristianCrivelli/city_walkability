@@ -3,7 +3,7 @@ connectivity_metrics.py
 ========================
 Phase 2 / Step 3 of the True Walkability pipeline: connectivity metrics —
 circuity and betweenness centrality — on the friction-weighted graph, to
-surface dead-ends and choke points (docs/issues/003).
+surface dead-ends and choke points (issue #3).
 
 1. CIRCUITY — network distance / straight-line distance, per O-D pair.
    Reuses the exact O-D sampling from #002 (`random_od_pairs`, same seed)

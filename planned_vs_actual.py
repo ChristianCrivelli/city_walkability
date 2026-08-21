@@ -19,7 +19,7 @@ locations. This is a scope/consistency tradeoff, not obviously the
 "correct" definition of "Planned" — flagged as an open question in
 REPORT.md, not presented as settled.
 
-Scope of this pass (see docs/issues/002 and report-notes.md):
+Scope of this pass (see issue #2 and REPORT.md):
   - O-D sampling: RANDOM pairs only. POI-based sampling (e.g. "nearest
     residential node -> nearest amenity") is stubbed below
     (`poi_based_od_pairs`) rather than implemented, since it requires a
@@ -96,7 +96,7 @@ def random_od_pairs(
     """
     Sample `n` random (origin, destination) node pairs from G's largest
     strongly-connected component, for statistical coverage across the whole
-    graph (per docs/issues/002).
+    graph (per issue #2).
 
     Guarantees o != d and no duplicate pairs. Returns fewer than `n` pairs
     (with a warning) if the component is too small to support that many
@@ -131,7 +131,7 @@ def poi_based_od_pairs(G: nx.MultiDiGraph, n: int = 50) -> list[tuple]:
 
     Intended to sample (residential node -> nearest amenity) pairs using
     live OSM POI data (`osmnx.features_from_place`, `amenity=*` / `shop=*`
-    via the Overpass API) — see docs/issues/002's proposed approach.
+    via the Overpass API) — see issue #2's proposed approach.
 
     Deferred deliberately for this pass (see module docstring): it needs an
     external, rate-limited network dependency this pipeline doesn't
@@ -142,7 +142,7 @@ def poi_based_od_pairs(G: nx.MultiDiGraph, n: int = 50) -> list[tuple]:
     needs synthetic POI pairs in addition to #005's real ones.
     """
     raise NotImplementedError(
-        "poi_based_od_pairs is a stub — see docs/issues/002 and the module "
+        "poi_based_od_pairs is a stub — see issue #2 and the module "
         "docstring. Use random_od_pairs for now; #005 supplies real O-D pairs."
     )
 
@@ -219,7 +219,7 @@ def compare_route(G: nx.MultiDiGraph, o, d) -> Optional[dict]:
     # Overlap as a fraction of edge *count* on the shorter (by edge count) of
     # the two routes — simple and symmetric enough for a v1 metric; a
     # length-weighted overlap is a reasonable future refinement if a
-    # hand-checked example (see docs/issues/002 acceptance criteria) suggests
+    # hand-checked example (see issue #2's acceptance criteria) suggests
     # edge-count overlap is misleading for very unequal-length route pairs.
     shorter_edge_count = min(len(planned_edges), len(actual_edges))
     overlap_pct = 100.0 * len(shared_edges) / shorter_edge_count if shorter_edge_count else 0.0

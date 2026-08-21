@@ -10,7 +10,7 @@ This implements the Friction Factor formula from the project plan:
     W = d * (1 + slope_penalty + infrastructure_penalty)
 
 as a new edge attribute, `friction_weight` (units: "effort-metres"),
-which later routing/index code (see docs/issues/002 and docs/issues/004)
+which later routing/index code (see issue #2 and issue #4)
 uses instead of raw `length`.
 
 1. SLOPE PENALTY — derived from Tobler's hiking function (Tobler, 1993),

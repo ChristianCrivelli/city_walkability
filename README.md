@@ -82,16 +82,16 @@ visualise_node_maps.py      Static visualization — per-city and combined
                              wire in once #007 lands).
 ```
 
-Everything downstream — Planned-vs-Actual routing, circuity, betweenness
-centrality, the composite index, and interactive visualization — is
-tracked as open work in `docs/issues/`, not yet implemented. See
-[ROADMAP.md](ROADMAP.md) for sequencing and rationale.
+Planned-vs-Actual routing and connectivity metrics (circuity, betweenness
+centrality) are implemented — see [ROADMAP.md](ROADMAP.md). The composite
+index and interactive visualization are still open work, tracked on
+[GitHub Issues](https://github.com/ChristianCrivelli/city_walkability/issues).
 
 ### Design decisions worth knowing about before reading the code
 
 - The friction formula is **additive** (`1 + penalties`), matching the
   project's original design — not multiplicative. See
-  `docs/issues/001-infrastructure-friction-weighting.md`.
+  [GitHub issue #1](https://github.com/ChristianCrivelli/city_walkability/issues/1).
 - A real data-quality bug was found and fixed during implementation: the
   original pedestrian-edge filter treated an explicit `sidewalk=no` OSM
   tag as evidence a sidewalk *exists*, because it only checked tag
@@ -105,7 +105,8 @@ tracked as open work in `docs/issues/`, not yet implemented. See
 
 `OSMnx` / `NetworkX` (network extraction & graph algorithms) ·
 `GeoPandas` (spatial dataframes) · `Matplotlib` (static visualization,
-`Folium` planned for interactive — see `docs/issues/007`) · Open-Elevation
+`Folium` planned for interactive — see
+[GitHub issue #7](https://github.com/ChristianCrivelli/city_walkability/issues/7)) · Open-Elevation
 API (elevation data, no key required).
 
 ### Running it
@@ -137,5 +138,7 @@ and reuse it on subsequent runs rather than re-downloading from OSM.
 - [`ROADMAP.md`](ROADMAP.md) — phased plan, what's done vs. open
 - [`REPORT.md`](REPORT.md) — running methodology notes, open questions,
   and findings, feeding the eventual write-up
-- [`docs/issues/`](docs/issues/) — tracked backlog, one file per unit of
-  work, GitHub-issue-shaped
+- [GitHub Issues](https://github.com/ChristianCrivelli/city_walkability/issues) —
+  tracked backlog and per-issue resolution notes (formerly mirrored under
+  `docs/issues/`; that folder has been retired in favor of Issues as the
+  single source of truth)

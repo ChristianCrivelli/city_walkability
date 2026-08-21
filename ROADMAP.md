@@ -7,7 +7,9 @@ see the engineering hold up. The roadmap below is sequenced so that the
 project scales out to more cities or more polished visuals — validating
 five cities properly beats generalizing to fifty prematurely.
 
-Each phase links to its tracked issue(s) in `docs/issues/`.
+Each phase links to its tracked issue(s) on
+[GitHub Issues](https://github.com/ChristianCrivelli/city_walkability/issues)
+— the single source of truth for issue status and resolution notes.
 
 ## Phase 1 — Data pipeline ✅ Done
 
@@ -23,34 +25,35 @@ _Code: `pedestraian_nodes.py`, `visualise_node_maps.py`_
 The project's actual differentiator. Order matters here — each step
 depends on the graph the previous step produced:
 
-1. ✅ [**001 — Friction-weighted edges**](docs/issues/001-infrastructure-friction-weighting.md) (GitHub #1)
+1. ✅ [**001 — Friction-weighted edges**](https://github.com/ChristianCrivelli/city_walkability/issues/1)
    (slope penalty + infrastructure penalty combined into `friction_weight`)
-2. ✅ [**002 — Planned vs. Actual comparison**](docs/issues/002-planned-vs-actual-baseline-and-comparison.md) (GitHub #2)
-   (`planned_vs_actual.py` — random O-D sampling + per-pair comparison, run against all 5 cities; POI-based sampling deferred to #005)
-3. ✅ [**003 — Connectivity metrics**](docs/issues/003-connectivity-metrics.md) (GitHub #3)
-   (`connectivity_metrics.py` — circuity reusing #002's O-D sample, betweenness centrality with exact/k-sample split by graph size, top-10 choke points per city)
-4. 🔲 [**004 — Composite True Walkability Index**](docs/issues/004-true-walkability-index.md) (GitHub #4)
+2. ✅ [**002 — Planned vs. Actual comparison**](https://github.com/ChristianCrivelli/city_walkability/issues/2)
+   (`planned_vs_actual.py` — random O-D sampling + per-pair comparison, run against all 5 cities; POI-based sampling deferred to #5)
+3. ✅ [**003 — Connectivity metrics**](https://github.com/ChristianCrivelli/city_walkability/issues/3)
+   (`connectivity_metrics.py` — circuity reusing #2's O-D sample, betweenness centrality with exact/k-sample split by graph size, top-10 choke points per city)
+4. 🔲 [**004 — Composite True Walkability Index**](https://github.com/ChristianCrivelli/city_walkability/issues/4)
 
 Running alongside Phase 2, not blocking it:
 
-- 🔲 [**005 — Personal-path validation**](docs/issues/005-personal-path-validation.md) (GitHub #5)
+- 🔲 [**005 — Personal-path validation**](https://github.com/ChristianCrivelli/city_walkability/issues/5)
   — anchor the comparison in real, lived routes as soon as start/end
   points are supplied.
 
 ## Phase 3 — Scale & polish (after Phase 2 stabilizes)
 
-- 🔲 [**006 — Generalize to an arbitrary city**](docs/issues/006-generalize-to-arbitrary-city.md) (GitHub #6)
+- 🔲 [**006 — Generalize to an arbitrary city**](https://github.com/ChristianCrivelli/city_walkability/issues/6)
   — deliberately sequenced last; see that issue for why.
-- 🔲 [**007 — Interactive visualization**](docs/issues/007-interactive-visualization.md) (GitHub #7)
-- 🟡 [**008 — Repo hygiene & portfolio polish**](docs/issues/008-repo-hygiene-and-portfolio-polish.md) (GitHub #8)
-  — partially done alongside this roadmap; git-history/data-storage
-  decision still open.
+- 🔲 [**007 — Interactive visualization**](https://github.com/ChristianCrivelli/city_walkability/issues/7)
+- 🟡 [**008 — Repo hygiene & portfolio polish**](https://github.com/ChristianCrivelli/city_walkability/issues/8)
+  — data-storage decision made (leave the ~108MB as-is); filename typo fix
+  (`pedestraian_nodes.py` → `pedestrian_nodes.py`) and `METHODOLOGY.md`
+  still open, the latter waiting on #3/#4 to stabilize.
 
 ## Phase 4 — The report
 
 Not an issue — tracked as running notes in [`REPORT.md`](REPORT.md) as we
 go, then written up once Phase 2's numbers exist to report on. Audience
-and format (written report vs. interactive companion, see #007) still
+and format (written report vs. interactive companion, see #7) still
 open — see REPORT.md.
 
 ## Explicitly not yet decided
