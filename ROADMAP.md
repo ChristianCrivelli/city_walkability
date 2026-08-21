@@ -25,7 +25,8 @@ depends on the graph the previous step produced:
 
 1. ✅ [**001 — Friction-weighted edges**](docs/issues/001-infrastructure-friction-weighting.md) (GitHub #1)
    (slope penalty + infrastructure penalty combined into `friction_weight`)
-2. 🔲 [**002 — Planned vs. Actual comparison**](docs/issues/002-planned-vs-actual-baseline-and-comparison.md) (GitHub #2)
+2. ✅ [**002 — Planned vs. Actual comparison**](docs/issues/002-planned-vs-actual-baseline-and-comparison.md) (GitHub #2)
+   (`planned_vs_actual.py` — random O-D sampling + per-pair comparison, run against all 5 cities; POI-based sampling deferred to #005)
 3. 🔲 [**003 — Connectivity metrics**](docs/issues/003-connectivity-metrics.md) (GitHub #3)
    (circuity, betweenness centrality / choke points)
 4. 🔲 [**004 — Composite True Walkability Index**](docs/issues/004-true-walkability-index.md) (GitHub #4)
